@@ -22,4 +22,6 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: meeting-room-notification_production
+  username: meeting-room-notification_notifications
+  password: <%= ENV['DATABASE_PASSWORD'] %>
