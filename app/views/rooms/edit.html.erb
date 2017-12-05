@@ -1,0 +1,17 @@
+<%= @room.name %>
+<%= @room.description %>
+
+<%= form_for @room do |f| %>
+  <%= f.hidden_field :status, value: 1 %><br />
+  <%= f.submit "waiting"%>
+<% end %>
+
+<%= form_for @room do |f| %>
+  <%= f.hidden_field :status, value: 2 %><br />
+  <%= f.submit "time's up"%>
+<% end %>
+
+<%= form_for @room do |f| %>
+  <%= f.hidden_field :status, value: 3 %><br />
+  <%= f.submit "time to leave!"%>
+<% end %>
