@@ -5,7 +5,8 @@ class RoomsController < ApplicationController
 
   def show
     room = Room.find(params[:id])
-    render plain: room.status
+    room.update_attribute(:status, 0) if room.updated_at < 30.seconds.ago
+    render json: {status: room.status}
   end
 
   def edit
