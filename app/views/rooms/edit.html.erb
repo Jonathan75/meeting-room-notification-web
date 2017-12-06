@@ -24,9 +24,9 @@ status: <%= @room.status_description %>
 
   <div class="col-lg-6">
     <h3> Use QR code or url below to send notification</h3>
-    <img src="<%= generate_qr(edit_room_path(@room)) %>" class="qr-code">
+    <img src="<%= generate_qr(room_url(@room)) %>" class="qr-code">
     <p>
-      <%= link_to(edit_room_url(@room), edit_room_path(@room)) %>
+      <%= link_to(room_url(@room), room_path(@room)) %>
     </p>
   </div>
 </div>
