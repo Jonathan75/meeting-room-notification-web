@@ -16,7 +16,7 @@ class RoomsController < ApplicationController
   def update
     @room = Room.find(params[:id])
     if @room.update_attributes(room_params)
-      flash[:success] = 'Room was updated successfully.'
+      flash[:success] = friendly_message
       render :edit
     else
       flash[:error] = 'unable to change status'
@@ -33,6 +33,17 @@ class RoomsController < ApplicationController
 
   def room_params
     params.require(:room).permit!
+  end
+
+  def friendly_message
+    case @room.status
+      when 1
+        'Room occupants have been notified you are waiting.'
+      when 2
+        'Room occupants have been notified they are out of time.'
+      when 3
+        'Room occupants have been notified they need to leave.'
+    end
   end
 
 end

@@ -1,7 +1,7 @@
 <%= @room.name %>
 <%= @room.description %>
 <p>
-status:<%= @room.status %>
+status:<%= ' ' + @room.status_description %>
 </p>
 
 <%= form_for @room do |f| %>
