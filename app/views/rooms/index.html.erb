@@ -1,5 +1,5 @@
-<table class="table">
-  <thead>
+<table class="table table-striped">
+  <thead class="thead-dark">
   <tr>
     <th>Room Name</th>
     <th>Description</th>
@@ -16,3 +16,8 @@
   <% end %>
   </tbody>
 </table>
+<script>
+  $(document).ready(function() {
+    $('table').DataTable();
+  } );
+</script>

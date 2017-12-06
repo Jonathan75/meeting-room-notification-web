@@ -45,6 +45,7 @@ gem 'rails_admin', '~> 1.2'
 gem 'bootstrap', '~> 4.0.0.beta2'
 gem 'barby'
 gem 'rqrcode'
+gem 'jquery-datatables-rails', '~> 3.4.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
