@@ -10,7 +10,7 @@ class RoomsController < ApplicationController
 
     respond_to do |format|
       format.json do
-        render json: {status: @room.status}
+        render json: {status: @room.status, status_description: @room.status_description}
       end
       format.html do
         render :edit
