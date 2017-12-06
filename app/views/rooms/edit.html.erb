@@ -5,20 +5,20 @@ status: <%= @room.status_description %>
 </p>
 
 <div class="row">
-  <div class="col-lg-6">
+  <div class="col-lg-6 mb-3">
     <%= form_for @room do |f| %>
       <%= f.hidden_field :status, value: 1 %><br />
-      <%= f.submit "waiting"%>
+      <%= f.submit "Waiting", class: 'btn btn-outline-primary btn-block btn-lg' %>
     <% end %>
 
     <%= form_for @room do |f| %>
       <%= f.hidden_field :status, value: 2 %><br />
-      <%= f.submit "time's up"%>
+      <%= f.submit "Time's Up", class: 'btn btn-outline-primary btn-block btn-lg' %>
     <% end %>
 
     <%= form_for @room do |f| %>
       <%= f.hidden_field :status, value: 3 %><br />
-      <%= f.submit "time to leave!"%>
+      <%= f.submit "Time To Leave!", class: 'btn btn-outline-primary btn-block btn-lg' %>
     <% end %>
   </div>
 
