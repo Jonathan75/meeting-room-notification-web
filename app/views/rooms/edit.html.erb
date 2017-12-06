@@ -5,7 +5,7 @@ status: <%= @room.status_description %>
 </p>
 
 <div class="row">
-  <div class="col-lg-6 mb-3">
+  <div class="col-lg-6 mb-5">
     <%= form_for @room do |f| %>
       <%= f.hidden_field :status, value: 1 %><br />
       <%= f.submit "Waiting", class: 'btn btn-warning btn-block btn-lg' %>
