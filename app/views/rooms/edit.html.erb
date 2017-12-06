@@ -1,20 +1,32 @@
 <%= @room.name %>
 <%= @room.description %>
 <p>
-  status:<%= ' ' + @room.status_description %>
+status: <%= @room.status_description %>
 </p>
 
-<%= form_for @room do |f| %>
-    <%= f.hidden_field :status, value: 1 %><br />
-    <%= f.submit "waiting"%>
-<% end %>
+<div class="row">
+  <div class="col-lg-6">
+    <%= form_for @room do |f| %>
+      <%= f.hidden_field :status, value: 1 %><br />
+      <%= f.submit "waiting"%>
+    <% end %>
 
-<%= form_for @room do |f| %>
-    <%= f.hidden_field :status, value: 2 %><br />
-    <%= f.submit "time's up"%>
-<% end %>
+    <%= form_for @room do |f| %>
+      <%= f.hidden_field :status, value: 2 %><br />
+      <%= f.submit "time's up"%>
+    <% end %>
 
-<%= form_for @room do |f| %>
-    <%= f.hidden_field :status, value: 3 %><br />
-    <%= f.submit "time to leave!"%>
-<% end %>
+    <%= form_for @room do |f| %>
+      <%= f.hidden_field :status, value: 3 %><br />
+      <%= f.submit "time to leave!"%>
+    <% end %>
+  </div>
+
+  <div class="col-lg-6">
+    <h3> Use QR code or url below to send notification</h3>
+    <img src="<%= generate_qr(edit_room_path(@room)) %>" class="qr-code">
+    <p>
+      <%= link_to(edit_room_url(@room), edit_room_path(@room)) %>
+    </p>
+  </div>
+</div>
