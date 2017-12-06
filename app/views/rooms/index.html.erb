@@ -1,19 +1,18 @@
-
 <table class="table">
   <thead>
-    <tr>
-      <th>Room Name</th>
-      <th>Description</th>
-      <th>Status</th>
-    </tr>
+  <tr>
+    <th>Room Name</th>
+    <th>Description</th>
+    <th>Status</th>
+  </tr>
   </thead>
   <tbody>
   <% @rooms.each do |room| %>
-    <tr>
-      <td><%= link_to room.name, edit_room_path(room) %></td>
-      <td><%= room.description %></td>
-      <td><%= room.status_description %></td>
-    </tr>
+      <tr>
+        <td><%= link_to room.name, edit_room_path(room) %></td>
+        <td><%= room.description %></td>
+        <td><%= room.status_description %></td>
+      </tr>
   <% end %>
   </tbody>
 </table>
