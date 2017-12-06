@@ -13,6 +13,7 @@
 //= require jquery3
 //= require jquery_ujs
 //= require rails-ujs
+//= require dataTables/popper.min
 //= require bootstrap
 //= require dataTables/jquery-1.12.4
 //= require dataTables/jquery.dataTables.min
