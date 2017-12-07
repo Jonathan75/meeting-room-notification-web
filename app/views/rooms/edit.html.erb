@@ -1,8 +1,13 @@
 <%= @room.name %>
 <%= @room.description %>
-<p>
-status: <%= @room.status_description %>
-</p>
+<div>
+  <p>
+  Status:
+    <span id="room-status" data-room-id="<%= @room.id %>">
+      <%= @room.status_description %>
+    </span>
+  </p>
+</div>
 
 <div class="row">
   <div class="col-lg-6 mb-5">

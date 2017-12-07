@@ -5,6 +5,7 @@ class Room < ActiveRecord::Base
   def status_description
     case status
       when 0
+        "Not Set"
       when 1
         'Waiting 👋🏼'
       when 2
