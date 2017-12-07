@@ -1,10 +1,12 @@
 function PollStatus() {
   $(function() {
     room_id = $("#room-status").data('room-id')
-    $.getJSON(
-        "/rooms/" + room_id + ".json",
-      function(json){ $('#room-status').text(json.status_description);
-      });
+    if (room_id) {
+      $.getJSON(
+          "/rooms/" + room_id + ".json",
+        function(json){ $('#room-status').text(json.status_description);
+        });
+    }
   });
 }
 
