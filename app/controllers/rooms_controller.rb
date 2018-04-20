@@ -8,10 +8,23 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
     respond_to do |format|
       format.json do
+        update_room_checked_at(Time.now)
         render json: {status: @room.status, status_description: @room.status_description}
       end
       format.html do
         render :edit
+      end
+    end
+  end
+
+  def check
+    offline = Room.all.select{|room| room.offline }.size
+    respond_to do |format|
+      format.json do
+        render json: {status: offline == 0 ? 0: 1}
+      end
+      format.html do
+        redirect_to rooms_path
       end
     end
   end
@@ -33,6 +46,11 @@ class RoomsController < ApplicationController
   end
 
   private
+
+  def update_room_checked_at(time)
+    @room.update_attributes checked_at: time
+  end
+
 
   def room_params
     params.require(:room).permit!

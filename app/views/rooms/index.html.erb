@@ -1,6 +1,7 @@
 <table class="table table-striped">
   <thead class="thead-dark">
   <tr>
+    <th>Signal</th>
     <th>Room Name</th>
     <th>Description</th>
     <th>Status</th>
@@ -9,6 +10,13 @@
   <tbody>
   <% @rooms.each do |room| %>
       <tr>
+        <td>
+        <% if room.offline %>
+            <i class="fa fa-thumbs-down" title="Down"></i>
+        <% else %>
+            <i class="fa fa-wifi" title="Up"></i>
+        <% end %>
+        </td>
         <td><%= link_to room.name, edit_room_path(room) %></td>
         <td><%= room.description %></td>
         <td><%= room.status_description %></td>
