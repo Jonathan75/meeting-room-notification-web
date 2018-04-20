@@ -8,7 +8,7 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
     respond_to do |format|
       format.json do
-        update_room_checked_at(Time.now)
+        update_room_checked_at(Time.now) unless params['web']
         render json: {status: @room.status, status_description: @room.status_description}
       end
       format.html do
