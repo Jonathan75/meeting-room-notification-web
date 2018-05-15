@@ -48,7 +48,7 @@ class RoomsController < ApplicationController
   private
 
   def update_room_checked_at(time)
-    @room.update_attributes checked_at: time
+    @room.update_attributes! checked_at: time
   end
 
 
