@@ -18,7 +18,12 @@ class RoomsController < ApplicationController
   end
 
   def check
-    offline = Room.all.select{|room| room.offline }.size
+    if params[:ids]
+      room_ids = params[:ids].split(',')
+      offline = Room.where(id: room_ids).select{|room| room.offline }.size
+    else
+      offline = Room.all.select{|room| room.offline }.size
+    end
     respond_to do |format|
       format.json do
         render json: {status: offline == 0 ? 0: 1}
