@@ -42,7 +42,11 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
     if @room.update_attributes(room_params)
       ResetRoomStatusJob.perform_in(30, @room.id)
-      flash[:success] = friendly_message
+      if @room.offline
+        flash[:notice] = 'The room status light is currently offline.'
+      else
+        flash[:success] = friendly_message
+      end
       render :edit
     else
       flash[:error] = 'unable to change status'
