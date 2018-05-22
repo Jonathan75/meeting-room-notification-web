@@ -14,4 +14,9 @@ class Room < ActiveRecord::Base
         'Urgent!! 😫'
     end
   end
+
+  def offline
+    return true if checked_at.nil?
+    Time.now - checked_at > 60
+  end
 end

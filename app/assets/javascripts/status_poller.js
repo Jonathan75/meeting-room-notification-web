@@ -3,7 +3,7 @@ function PollStatus() {
     room_id = $("#room-status").data('room-id')
     if (room_id) {
       $.getJSON(
-          "/rooms/" + room_id + ".json",
+          "/rooms/" + room_id + ".json?web=true",
         function(json){ $('#room-status').text(json.status_description);
         });
     }
