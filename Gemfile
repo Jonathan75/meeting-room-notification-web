@@ -50,6 +50,7 @@ gem 'barby'
 gem 'rqrcode'
 gem 'jquery-rails'
 gem 'sucker_punch'
+gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
