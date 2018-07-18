@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require popper
 //= require bootstrap
-//= require jquery.dataTables.min.js
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .

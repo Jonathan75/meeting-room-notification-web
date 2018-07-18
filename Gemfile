@@ -45,11 +45,11 @@ gem 'rails_admin', '~> 1.2'
 gem 'popper_js', '~> 1.12.3'
 gem 'bootstrap', '~> 4.0.0.beta2'
 gem 'font-awesome-sass', '~> 5.0.9'
-gem 'jquery-datatables-rails', '~> 3.4.0'
 gem 'barby'
 gem 'rqrcode'
 gem 'jquery-rails'
 gem 'sucker_punch'
+gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
