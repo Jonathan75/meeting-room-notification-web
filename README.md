@@ -1,4 +1,3 @@
-# README
 Me waiting for people to get out of my meeting room  
 ![velociraptor looking through a window](https://media.giphy.com/media/8M8qPus8Tf9IY/giphy.gif)
 
