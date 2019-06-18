@@ -41,9 +41,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'rails_admin', '~> 1.2'
-
-gem 'popper_js', '~> 1.12.3'
-gem 'bootstrap', '~> 4.0.0.beta2'
+gem 'bootstrap', '~> 4.3.1'
 gem 'font-awesome-sass', '~> 5.0.9'
 gem 'barby'
 gem 'rqrcode'
